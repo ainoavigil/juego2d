@@ -13,9 +13,14 @@ public class Enemigo : MonoBehaviour
 
   public GameObject player; 
 
+  public GameObject gestorSonido;
+
+  private AudioSource emisorEnemigo; 
+
   void Start(){
     player = GameObject.FindGameObjectWithTag("Player");
     posicionInicial = transform.position; 
+    emisorEnemigo = GetComponent<AudioSource>();
 
   }
 
@@ -38,12 +43,14 @@ public class Enemigo : MonoBehaviour
     clonBala = col.gameObject.name;
 
     if (clonBala == "Balafuego(Clone)") {
+        emisorEnemigo.PlayOneShot(gestorSonido.GetComponent<AudioManager>().sonidoBola, 1f);
         PrincipalScript.Enemigos++;
         Destroy(this.gameObject, 0.3f); 
     }
     if (clonBala == "Personaje"){
         PrincipalScript.Vida--; 
          player.transform.position = new Vector2 (-4f, -1.46f);
+         gestorSonido.GetComponent<AudioManager>().sonidoDead();
     }
   }
 }

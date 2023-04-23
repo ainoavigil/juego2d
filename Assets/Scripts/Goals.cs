@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Goals : MonoBehaviour
 {
+
+    public GameObject gestorSonido;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +22,6 @@ public class Goals : MonoBehaviour
     void OnTriggerEnter2D(){
         PrincipalScript.Score +=5;
         Destroy(this.gameObject, 0.5f);
+        gestorSonido.GetComponent<AudioManager>().sonidoPuntos();
     }
 }

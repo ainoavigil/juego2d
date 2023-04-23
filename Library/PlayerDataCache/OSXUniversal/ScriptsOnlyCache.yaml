@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AudioManager
     - Disparo
     - Enemigo
     - Goals
@@ -9,7 +10,6 @@ ScriptsOnlyBuild:
     - Muerte
     - Parallax
     - PrincipalScript
-    - ScriptStart
     - SeguirCamara
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -35,15 +35,6 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
-    UnityEngine.UI.dll:
-    - UnityEngine.EventSystems.EventSystem
-    - UnityEngine.EventSystems.StandaloneInputModule
-    - UnityEngine.UI.Button
-    - UnityEngine.UI.CanvasScaler
-    - UnityEngine.UI.GraphicRaycaster
-    - UnityEngine.UI.Image
-    - UnityEngine.UI.RawImage
-    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Nivel1.unity:
     - Class: 1
@@ -69,6 +60,10 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -97,7 +92,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3976}
     - Class: 114
-      Script: {instanceID: 4434}
+      Script: {instanceID: 4436}
+    - Class: 114
+      Script: {instanceID: 4452}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -117,57 +114,6 @@ ScriptsOnlyBuild:
     - Class: 483693784
       Script: {instanceID: 0}
     - Class: 1839735485
-      Script: {instanceID: 0}
-    Assets/Scenes/Start.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 1518}
-    - Class: 114
-      Script: {instanceID: 2236}
-    - Class: 114
-      Script: {instanceID: 2408}
-    - Class: 114
-      Script: {instanceID: 2662}
-    - Class: 114
-      Script: {instanceID: 2834}
-    - Class: 114
-      Script: {instanceID: 3072}
-    - Class: 114
-      Script: {instanceID: 3314}
-    - Class: 114
-      Script: {instanceID: 3436}
-    - Class: 114
-      Script: {instanceID: 26090}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -346,7 +292,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 28c242a14e57748d0a057732f164e617
+      Hash: da38604297e86aa1368632899791eead
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Muerte
@@ -484,7 +430,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: c394bd57a37eaa901189fd72a02fca09
+      Hash: 6eadff71dbb5ed597a12cee37de29dcb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemigo
@@ -496,7 +442,7 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
-      Hash: 89d6c32415e310fe52858793a2d1547c
+      Hash: d857a712e9ad3ec0329d32636b908a5a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Disparo
@@ -586,6 +532,12 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
+      Hash: 8e9b095fbc738a4bc546af301a3c7afe
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScriptStart
+  - hash:
+      serializedVersion: 2
       Hash: 0edeba255bdbade25edc357f1412ba38
     assemblyName: Unity.2D.SpriteShape.Runtime.dll
     namespaceName: UnityEngine.U2D
@@ -598,10 +550,16 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 1f01b8b34155ffe799272aec4692e65e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Goals
+  - hash:
+      serializedVersion: 2
+      Hash: 49deac9efb287804e80471bd1917f3e9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioManager
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -740,14 +698,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
-  - hash:
-      serializedVersion: 2
-      Hash: 8e9b095fbc738a4bc546af301a3c7afe
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ScriptStart
   platform: 2
   scenePathNames:
-  - Assets/Scenes/Start.unity
   - Assets/Scenes/Nivel1.unity
-  playerPath: /Users/ainoavigil/Desktop/juego2d/MiJuego.app
+  playerPath: /Users/ainoavigil/Desktop/juego2d/MiJuego_lvl1.app
